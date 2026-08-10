@@ -1,0 +1,15 @@
+{
+  "name": "article-data-toolkit",
+  "version": "1.0.0",
+  "description": "Data toolkit for articles",
+  "license": "ISC",
+  "author": "Raimond Vargas",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "NODE_OTPIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}

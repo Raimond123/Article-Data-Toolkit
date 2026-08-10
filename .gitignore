@@ -1,0 +1,8 @@
+# Dependecies 
+node_modules/
+
+# macOS system files
+.DS_Store
+
+# Test coverage reports
+jest --coverage
