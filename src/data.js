@@ -21,14 +21,14 @@ export const defaultArticles = [
         id: "003",
         title: "How to travel around the world",
         author: "Raimond Vargas",
-        section: "Turism",
+        section: "Tourism",
         status: "published",
         publishedAt: "2025-07-10",
         summary: "A complete guide to explore new places."
     },
     {
         id: "004",
-        title: "Modern art in the new centry",
+        title: "Modern art in the new century",
         author: "Manuel Polo",
         section: "Art",
         status: "published",
@@ -60,7 +60,7 @@ export const defaultArticles = [
         section: "Professional",
         status: "published",
         publishedAt: "2026-07-10",
-        summary: "How to test as a professional engenieer."
+        summary: "How to test as a professional engineer."
     },
     {
         id: "008",
@@ -78,7 +78,7 @@ export const defaultArticles = [
         section: "Competitive Programming",
         status: "published",
         publishedAt: "2026-01-20",
-        summary: "Analazying why a node won't be in C-D or A-B if it is inherently a tree structure."
+        summary: "Analyzing why a node won't be in C-D or A-B if it is inherently a tree structure."
     },
     {
         id: "010",
@@ -118,9 +118,9 @@ export const defaultArticles = [
     },
     {
         id: "014",
-        title: "Navegating Santo Domingo",
+        title: "Navigating Santo Domingo",
         author: "Valerie Mesa",
-        section: "lifestyle",
+        section: "Lifestyle",
         status: "draft",
         publishedAt: null,
         summary: "Commuting efficiently via the Dominican Streets."
@@ -147,7 +147,7 @@ export const loadArticles = () => {
         console.error("Critical error reading from localStorage, falling back to default data:", error);
         return defaultArticles;
     }
-};
+}
 
 export const saveArticles = (articlesArray) => {
     try{
