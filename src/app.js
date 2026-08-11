@@ -29,7 +29,6 @@ const updateUI = () => {
     renderSummary(processedData);
 }
 
-
 const renderArticles = (articles) => {
     if(articles.length === 0){
         articlesContainer.innerHTML = '<div class="no-results">No articles found matching your criteria. </div>';
@@ -48,7 +47,7 @@ const renderArticles = (articles) => {
             </div>
             <p class="article-summary">${article.summary}</p>
         </div>
-        `).join('');
+    `).join('');
 };
 
 const renderSummary = (articles) => {

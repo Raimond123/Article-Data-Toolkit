@@ -140,8 +140,15 @@ export const loadArticles = () => {
     try{
         const rawData = localStorage.getItem("toolkit_articles");
         if(!rawData){
+            saveArticles(defaultArticles);
             return defaultArticles;
         }
+
+        const parsedData = JSON.parse(rawData);
+        if(!Array.isArray(parsedData)){
+            throw new Error("Stored data is not a valid array.");
+        }
+
         return JSON.parse(rawData);
     } catch(error){
         console.error("Critical error reading from localStorage, falling back to default data:", error);

@@ -54,5 +54,16 @@ describe('Article Data Toolkit Pure Functions', () => {
         expect(result.section.Tech).toBe(2);
         expect(result.section.Food).toBe(1);
     });
+
+    // Testing Immutability
+    test('does not mutate the original array when sorting', () => {
+        const originalState = [...mockArticles];
+        const originalLength = originalState.length;
+
+        sortArticles(mockArticles, 'title');
+
+        expect(mockArticles).toEqual(originalState);
+        expect(mockArticles.length).toBe(originalLength);
+    });
 });
 
