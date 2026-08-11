@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Data Toolkit | Optimum</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Article Data Toolkit</h1>
+      <p>A pure functional approach to data manipulation</p>
+    </header>
+
+    <aside class="controls-panel">
+      <!-- Search -->
+      <div class="control-group">
+        <label for="searchInput">Search Articles</label>
+        <input type="text" id="searchInput" placeholder="Type a title or keyword...">
+      </div>
+
+      <!-- Filter by Section -->
+      <div class="control-group">
+        <label for="sectionFilter">Filter by Section</label>
+        <select id="sectionFilter">
+          <option value="">All Sections</option>
+          <option value="Professional">Professional</option>
+          <option value="University">University</option>
+          <option value="Competitive Programming">Competitive Programming</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Hardware">Hardware</option>
+          <option value="Technology">Technology</option>
+        </select>
+      </div>
+
+      <!-- Filter by Status -->
+      <div class="control-group">
+        <label for="statusFilter">Filter by Status</label>
+        <select id="statusFilter">
+          <option value="">All Statuses</option>
+          <option value="published">Published</option>
+          <option value="draft">Draft</option>
+        </select>
+      </div>
+
+      <!-- Sort -->
+      <div class="control-group">
+        <label for="sortSelect">Sort By</label>
+        <select id="sortSelect">
+          <option value="date">Date (Newest First)</option>
+          <option value="title">Title (A-Z)</option>
+        </select>
+      </div>
+
+      <!-- Summary Dashboard -->
+      <div class="summary-dashboard" id="summaryDashboard">
+        <!-- Dynamic counts will be injected here -->
+      </div>
+    </aside>
+
+    <main class="content-panel">
+      <div id="articlesContainer" class="articles-grid">
+        <!-- Dynamic article cards will be injected here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Note: We use type="module" so the browser understands our imports -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
