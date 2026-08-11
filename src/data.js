@@ -149,7 +149,7 @@ export const loadArticles = () => {
             throw new Error("Stored data is not a valid array.");
         }
 
-        return JSON.parse(rawData);
+        return parsedData;
     } catch(error){
         console.error("Critical error reading from localStorage, falling back to default data:", error);
         return defaultArticles;
