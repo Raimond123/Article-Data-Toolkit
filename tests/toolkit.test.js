@@ -4,7 +4,9 @@ import{
     sortArticles,
     groupArticlesBySection,
     getSummaryCounts
-} from '../src/toolkit';
+} from '../src/toolkit.js';
+
+import {loadArticles, defaultArticles} from '../src/data';
 
 const mockArticles = [
     {id: "1", title: "Apple", section: "Tech", status: "published", publishedAt: "2026-01-1", summary: "MacBook pro"},
@@ -65,5 +67,39 @@ describe('Article Data Toolkit Pure Functions', () => {
         expect(mockArticles).toEqual(originalState);
         expect(mockArticles.length).toBe(originalLength);
     });
+
 });
 
+const localStorageMock = (() => {
+    let store = {};
+    return{
+        getItem: (key) => store[key] || null,
+        setItem: (key, value) => {store[key] = value.toString(); },
+        clear: () => {store = {}; }
+    };
+
+})();
+
+describe('Data persistence and Error Handling', () => {
+    beforeEach(() => {
+        localStorageMock.clear();
+    });
+
+    test('handles missing localStorageMock data and returns default articles', () => {
+        const result = loadArticles();
+        expect(result).toEqual(defaultArticles);
+    });
+
+    test('handles malformed localStorageMock data (invalid JSON) safely', () =>{
+        localStorageMock.setItem("toolkit_articles", "this is not a valid json {");
+        const result = loadArticles();
+        expect(result).toEqual(defaultArticles);
+    });
+
+    test('handles valid JSON that is not an array safely', () => {
+        localStorageMock.setItem("toolkit_articles", JSON.stringify({id: 1, title: "This is an object"}));
+        const result = loadArticles();
+
+        expect(result).toEqual(defaultArticles);
+    })
+})

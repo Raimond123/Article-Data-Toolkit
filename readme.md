@@ -8,9 +8,9 @@ A pure functional approach to data manipulation built with Vanilla JavaScript (E
 
 1. **Clone the repository** and navigate to the project root folder.
 2. **Install dependencies** (Babel and Jest are required for the test suite):
-   \\\bash
+```bash
    npm install
-   \\\
+```
 
 ## Running the Application
 
@@ -25,9 +25,9 @@ Since this project utilizes ES Modules (`type="module"`), opening the HTML file 
 The project includes an automated test suite with 6 test cases covering search, filtering, sorting, grouping, malformed data handling, and array immutability.
 
 To run the tests, execute:
-\\\bash
+```bash
 npm test
-\\\
+```
 
 ## Design Decisions & Architecture
 

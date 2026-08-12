@@ -7,7 +7,7 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "test": "NODE_OTPIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
